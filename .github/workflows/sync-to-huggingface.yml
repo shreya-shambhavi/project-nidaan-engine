@@ -12,6 +12,35 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
+          
+      - name: Inject Configuration for Hugging Face
+        run: |
+          # 1. Create the Hugging Face header dynamically
+          cat << 'EOF' > hf_header.txt
+          ---
+          title: Project Nidaan Engine
+          emoji: 🧬
+          colorFrom: blue
+          colorTo: green
+          sdk: gradio
+          sdk_version: 5.15.0
+          python_version: "3.12"
+          app_file: app.py
+          pinned: false
+          ---
+          
+          EOF
+          
+          # 2. Glue the header to the top of your clean README
+          cat hf_header.txt README.md > temp_readme.md
+          mv temp_readme.md README.md
+          
+          # 3. Commit this change locally inside the runner
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add README.md
+          git commit -m "Auto-inject Hugging Face configuration"
+
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
