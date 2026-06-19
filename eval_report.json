@@ -1,0 +1,121 @@
+{
+  "generated_at": "2026-06-19T03:36:05.908473Z",
+  "unit_tests": {
+    "total": 7,
+    "passed": 7,
+    "results": [
+      {
+        "test": "test_agent_state_has_required_keys",
+        "status": "PASS"
+      },
+      {
+        "test": "test_reviewer_score_must_be_in_bounds",
+        "status": "PASS"
+      },
+      {
+        "test": "test_extraction_schema_has_all_fields",
+        "status": "PASS"
+      },
+      {
+        "test": "test_feedback_history_grows_monotonically",
+        "status": "PASS"
+      },
+      {
+        "test": "test_pubmed_query_is_structured",
+        "status": "PASS"
+      },
+      {
+        "test": "test_router_logic",
+        "status": "PASS"
+      },
+      {
+        "test": "test_abstract_parsing_returns_list",
+        "status": "PASS"
+      }
+    ]
+  },
+  "integration_tests": {
+    "total": 2,
+    "passed": 2,
+    "results": [
+      {
+        "benchmark": "GLP-1 agonist weight management",
+        "query": "semaglutide weight loss clinical trial",
+        "elapsed_seconds": 5.74,
+        "summary_non_empty": true,
+        "summary_length": 530,
+        "abstracts_retrieved": true,
+        "score_in_bounds": true,
+        "score_above_threshold": true,
+        "confidence_score": 0.9,
+        "query_optimized": true,
+        "pubmed_query": "(semaglutide[MeSH Terms]) AND (obesity[MeSH Terms] OR weight loss[MeSH Terms]) AND (clinical trial[pt])",
+        "term_recall": 1.0,
+        "terms_found": [
+          "semaglutide",
+          "weight",
+          "obesity",
+          "GLP-1"
+        ],
+        "terms_missing": [],
+        "term_recall_pass": true,
+        "extractions_count": 3,
+        "field_fill_rates": {
+          "study_type": 1.0,
+          "sample_size": 0.67,
+          "population": 1.0,
+          "key_finding": 1.0
+        },
+        "avg_fill_rate": 0.92,
+        "extraction_pass": true,
+        "feedback_history_length": 0,
+        "history_labeled_correctly": true,
+        "iterations": 1,
+        "converged_first_try": true,
+        "status": "PASS"
+      },
+      {
+        "benchmark": "Hereditary breast cancer genetics",
+        "query": "BRCA1 BRCA2 breast cancer mutation risk",
+        "elapsed_seconds": 6.66,
+        "summary_non_empty": true,
+        "summary_length": 711,
+        "abstracts_retrieved": true,
+        "score_in_bounds": true,
+        "score_above_threshold": true,
+        "confidence_score": 0.9,
+        "query_optimized": true,
+        "pubmed_query": "(BRCA1[MeSH Terms] OR BRCA2[MeSH Terms]) AND (breast neoplasms[MeSH Terms]) AND (genetic predisposition to disease[MeSH Terms] OR genetic risk[MeSH Terms])",
+        "term_recall": 1.0,
+        "terms_found": [
+          "BRCA",
+          "breast",
+          "cancer",
+          "mutation"
+        ],
+        "terms_missing": [],
+        "term_recall_pass": true,
+        "extractions_count": 3,
+        "field_fill_rates": {
+          "study_type": 1.0,
+          "sample_size": 0.67,
+          "population": 1.0,
+          "key_finding": 1.0
+        },
+        "avg_fill_rate": 0.92,
+        "extraction_pass": true,
+        "feedback_history_length": 0,
+        "history_labeled_correctly": true,
+        "iterations": 1,
+        "converged_first_try": true,
+        "status": "PASS"
+      }
+    ]
+  },
+  "aggregate_metrics": {
+    "avg_confidence_score": 0.9,
+    "avg_term_recall": 1.0,
+    "avg_fill_rate": 0.92,
+    "avg_iterations": 1.0
+  }
+}
