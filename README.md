@@ -4,6 +4,8 @@ A stateful, multi-agent AI pipeline for biomedical literature synthesis. Five sp
 
 Built as a **validation-first** system: the pipeline ships with a dedicated evaluation framework that tests accuracy, extraction completeness, and consistency across benchmark queries.
 
+Check it out live : https://huggingface.co/spaces/shreya-shambhavi/project-nidaan-engine
+
 ---
 
 ## Architecture
