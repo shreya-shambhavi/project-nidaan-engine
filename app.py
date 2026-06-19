@@ -402,4 +402,4 @@ with gr.Blocks(title="Project Nidaan Engine") as demo:
 
 if __name__ == "__main__":
     print("Launching Nidaan Engine...")
-    demo.launch(share=True, theme = gr.themes.Soft())
+    demo.launch(share=True)
