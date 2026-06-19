@@ -1,3 +1,15 @@
+---
+title: Project Nidaan Engine
+emoji: 🧬
+colorFrom: blue
+colorTo: green
+sdk: gradio
+sdk_version: 5.15.0
+python_version: "3.12"
+app_file: app.py
+pinned: false
+---
+
 # 🧬 Project Nidaan Engine
 
 A stateful, multi-agent AI pipeline for biomedical literature synthesis. Five specialized agents collaborate in sequence — with an automated review-and-retry loop — to retrieve, structure, summarize, and validate medical research from PubMed.
